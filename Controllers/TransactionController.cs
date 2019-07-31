@@ -20,7 +20,7 @@ namespace api.Controllers
         [HttpPost]
         public ActionResult<Payment> Create([FromBody] Transaction tran)
         {
-            if (tran.Adquirente == null | tran.Bandeira == null | tran.Tipo == null | tran.Valor <= 0)
+            if (tran.Valor <= 0)
             {
                 return BadRequest();
             }
